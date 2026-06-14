@@ -107,6 +107,14 @@ pip install pg8000 -t python/
 zip -r pg8000-layer.zip python/
 ```
 
+```cmd
+aws lambda publish-layer-version \
+  --layer-name pg8000-layer \
+  --zip-file fileb://pg8000-layer.zip \
+  --compatible-runtimes python3.14 python3.13 python3.12 python3.11 python3.10 \
+  --description "pg8000 for RDS connection"
+```
+
 ---
 
 ## 使い分けの目安
